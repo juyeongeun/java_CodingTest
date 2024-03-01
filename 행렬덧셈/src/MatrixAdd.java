@@ -25,9 +25,8 @@ public class MatrixAdd {
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < M; j++) {
                 System.out.print(A[i][j]+B[i][j]+" ");
-                if(j == M-1)
-                    System.out.println();
             }
+            System.out.println();
         }
         
         s.close();
