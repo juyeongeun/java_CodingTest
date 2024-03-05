@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class App {
 	public static void main(String[] args) {
 		Scanner s = new Scanner(System.in);
+        
 		char[][] arr = new char[5][15];
 		int max = 0;	// 입력받는 문자열 중 가장 긴 문자열의 길이
 
