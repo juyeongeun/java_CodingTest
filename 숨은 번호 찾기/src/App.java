@@ -3,14 +3,13 @@ import java.util.Random;
 public class App {
     public static void main(String[] args) throws Exception {
         Scanner s = new Scanner(System.in);
+        Random r = new Random();
+        int k = r.nextInt(100);
         String re;
         boolean run=true;
     
         while(run){
             int num, max=99, min=0;
-            Random r = new Random();
-            int k = r.nextInt(100);
-            
             System.out.println("Up & Down게입입니다. 숨겨진 수를 맞추어 보세요");
             System.out.println("0-99");
 
@@ -41,7 +40,6 @@ public class App {
                     min=num;
                     System.out.println(num+"-"+max);
                 }
-                continue;
             }
         }
     }
