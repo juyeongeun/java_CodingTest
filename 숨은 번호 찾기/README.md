@@ -1,18 +1,6 @@
 ## Getting Started
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
-
-## Folder Structure
-
-The workspace contains two folders by default, where:
-
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+숨은 번호 맞추기 게임
+컴퓨터는 0에서 99까지의 임의의 수를 선택하고, 사용자는 이 수를 맞추는 게임이다.
+컴퓨터가 가진 수가 85인 경우, 사용자가 55라고 입력하면 '더 높게'가 출력되고 범위는 0-99에서 55-99로 수정된다.
+다시 70을 입력하면 '더 높게'출력 후 70-99 라는 식으로 메시지를 출력하고, 90입력 시 '더 낮게'를 출력하고 70-90으로 범위가 출력된다. 정답을 맞추기 전까지 범위를 좁혀가면서 수를 맞춘다. 정답을 맞추면 게임을 반복하기 위해 y/n을 묻고 'n'이 입력되면 종료한다.
