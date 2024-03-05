@@ -1,18 +1,5 @@
 ## Getting Started
-
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
-
-## Folder Structure
-
-The workspace contains two folders by default, where:
-
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+두 사람이 하는 가위바위보 게임을 만들기
+두 사람의 이름은 '철수'와 '영희'이다. 먼저 '철수'를 출력하고 '가위', '바위', '보' 중 하나를 문자열로 입력받는다.
+'영희'에 대해서 마찬가지 방법으로 입력받는다.
+두 사람으로부터 문자열을 입력받은 후 누가 이겼는지 판별하여 승자를 출력한다.
