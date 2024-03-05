@@ -13,7 +13,7 @@ public class App {
 				arr[i][j] = str.charAt(j);
 		}
 
-		for(int i=0; i<max; i++) {
+		for(int i=0; i<max; i++) { //asd
 			for(int j=0; j<5; j++) {
 				if(arr[j][i] == '\0')	// char 배열의 초깃값 = '\0'
 					continue;
