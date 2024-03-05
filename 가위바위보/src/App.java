@@ -19,7 +19,8 @@ public class App {
         }
         else if(cheolsu.equals("가위") && younghei.equals("보")){
             System.out.println("철수가 이겼습니다.");
-        }else if(cheolsu.equals("바위") && younghei.equals("보")){
+        }
+        else if(cheolsu.equals("바위") && younghei.equals("보")){
             System.out.println("영희가 이겼습니다.");
         }
         else if(cheolsu.equals("바위") && younghei.equals("가위")){
