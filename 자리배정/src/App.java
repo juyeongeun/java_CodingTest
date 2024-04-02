@@ -1,83 +1,67 @@
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class App {
 
-	static int C,R;
-	static int K;
-	static int map[][];
+    static int C, R;
+    static int K;
+    static int map[][];
 
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		C = sc.nextInt(); //가로
-		R = sc.nextInt(); //세로
-		K = sc.nextInt(); //관객의 대기번호
-		
-		map = new int[R][C]; //좌석 수
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        C = sc.nextInt(); // 가로 길이 입력
+        R = sc.nextInt(); // 세로 길이 입력
+        K = sc.nextInt(); // 관객의 대기번호 입력
+        
+        map = new int[R][C]; // 좌석 배치를 나타내는 배열 생성
 
-		int num = 1;
-		int row = R, col = 0; //행=마지막 수, 열=0
-		int i;
-		int Result[] = new int[2];
-		boolean isTrue =true;
-		while(isTrue) {
-			//대기 번호가 넘어가면
-			if(K > R*C) break;
-			if(row-1>=0 && row+1<R && col-1>=0 && col+1>C && 
-					map[row-1][col] !=0 && map[row+1][col] !=0 && map[row][col-1] !=0 && map[row][col+1] !=0) break;
+        int num = 1; // 좌석 번호
+        int row = R, col = 0; // 현재 좌석의 행과 열
+        int Result[] = new int[2]; // 결과값을 담을 배열
 
-			//상
-			for(i=row-1;i>=0;i--) {
-				if(map[i][col] != 0) break;
-				map[i][col] = num++;
-				if(map[i][col] == K) {
-					Result[0] = i;
-					Result[1] = col;
-					isTrue = false;
-				}
-			}
-			row = i+1;
+        // 대기번호가 좌석의 수를 초과하면 0 출력, 아니면 해당 좌석 출력
+        if (K > R * C) {
+            System.out.println(0);
+            return;
+        }
 
-			//우
-			for(i=col+1;i<C;i++) {
-				if(map[row][i] !=0) break;
-				map[row][i] = num++;
-				if(map[row][i] == K) {
-					Result[0] = row;
-					Result[1] = i;
-					isTrue = false;
-				}
-			}
-			col = i-1;
-
-			//하
-			for(i=row+1;i<R;i++) {
-				if(map[i][col] !=0) break;
-				map[i][col] = num++;
-				if(map[i][col] == K) {
-					Result[0] = i;
-					Result[1] = col;
-					isTrue = false;
-				}
-			}
-			row = i-1;
-            
-			//좌
-			for(i=col-1;i>=0;i--) {
-				if(map[row][i] !=0) break;
-				map[row][i] = num++;
-				if(map[row][i] == K) {
-					Result[0] = row;
-					Result[1] = i;
-					isTrue = false;
-				}
-			}
-			col = i+1;
-		}
-
-		if(K>(R*C)) System.out.println(0);
-		else
-			System.out.println((Result[1]+1)+" "+(R-Result[0]));
+        while (true) {
+            // 상하좌우에 숫자가 채워져 있는지 확인하여, 채워지지 않았다면 해당 방향으로 이동하고 숫자를 채웁니다.
+            while (row - 1 >= 0 && map[row - 1][col] == 0) {
+                map[--row][col] = num++;
+                if (map[row][col] == K) {
+                    Result[0] = row;
+                    Result[1] = col;
+                    System.out.println((Result[1] + 1) + " " + (R - Result[0]));
+                    return;
+                }
+            }
+            while (col + 1 < C && map[row][col + 1] == 0) {
+                map[row][++col] = num++;
+                if (map[row][col] == K) {
+                    Result[0] = row;
+                    Result[1] = col;
+                    System.out.println((Result[1] + 1) + " " + (R - Result[0]));
+                    return;
+                }
+            }
+            while (row + 1 < R && map[row + 1][col] == 0) {
+                map[++row][col] = num++;
+                if (map[row][col] == K) {
+                    Result[0] = row;
+                    Result[1] = col;
+                    System.out.println((Result[1] + 1) + " " + (R - Result[0]));
+                    return;
+                }
+            }
+            while (col - 1 >= 0 && map[row][col - 1] == 0) {
+                map[row][--col] = num++;
+                if (map[row][col] == K) {
+                    Result[0] = row;
+                    Result[1] = col;
+                    System.out.println((Result[1] + 1) + " " + (R - Result[0]));
+                    return;
+                }
+            }
+        }
     }
 }
-	
